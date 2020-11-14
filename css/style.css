@@ -412,13 +412,14 @@ a.logo {
 #portfolio {
   width: 100%;
   padding: 100px 0;
+  background-color: #edf1fd;
 }
 
 
 #portfolio h3 {
   text-transform: uppercase;
   text-align: center;
-  color: #fff;
+  color: #000;
   font-size: 30px;
   font-weight: 600;
   margin-top: 10px;
@@ -453,7 +454,7 @@ a.logo {
 
 #portfolio ul li{
   position: relative;
-  color: #fff;
+  color: #000;
   padding: 8px 20px;
   margin: 5px;
   letter-spacing: 1px;
@@ -485,65 +486,102 @@ a.logo {
   margin: 20px 0px;
 }
 #portfolio .product__item .card{
+  position: relative;
+  box-shadow: none;
   border:none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  background-color: #fff;
+  cursor: pointer;
+}
+#portfolio .product__item .card::before,
+#portfolio .product__item .card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+#portfolio .product__item .card::before {
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+    0 3px 1px 0 rgba(20, 23, 28, 0.15);
+  opacity: 1;
+}
+
+#portfolio .product__item .card::after {
+  opacity: 0;
+  box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.5);
+}
+
+#portfolio .product__item .card:hover::before {
+  opacity: 0;
+}
+
+#portfolio .product__item .card:hover::after {
+  opacity: 1;
 }
 
 #portfolio .product__item .card-body{
   background-color: rgb(255, 255, 255);
+  /* background-color: #000; */
+  border-top: 1px solid #2b2b2d;
 }
 
 #portfolio .product__item .card-title {
-  color: #29303b;
-  font-size: 15px;
+  color:var(--mainColor);
+  /* color: #f9f9f9; */
+  font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: capitalize;
+  text-align: left;
+  height: 54px;
 }
 
 #portfolio .product__item .card-text {
-  color: #686f7a;
-  font-size: 12px;
+  color: #7b6f71;
+  font-size: .813em;
   font-weight: normal;
-  margin-bottom: 14px;
-  height: 70px;
+  margin-bottom: 10px;
 }
-#portfolio .card-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* background: rgb(255, 7, 110) ; */
-  background:var(--mainColor) ;
-  padding: 0px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-/* #portfolio .card-footer button{
-  margin: 0px 5px;
-} */
 
-#portfolio .card-footer .btnDemo,.btnCode{
+#portfolio .product__item a{
+  color: #3e0e12;
+  text-decoration: none;
+  transition: all 0.5s;
+  text-align: center;
+}
+#portfolio  .btnGroup{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  color: white;  
 }
-#portfolio .card-footer .borderBetween{
+#portfolio .btnDemo, .btnCode{
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: 50%;
+  padding: 10px;
+  color: #3e0e12;  
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#portfolio .btnDemo:hover, .btnCode:hover{
+  color: var(--mainColor);
+}
+#portfolio .btnCode:hover{
+  color: var(--mainColor);
+}
+#portfolio .product__item .borderBetween{
   border-right: 1px solid rgb(172, 26, 87);
 }
 
-#portfolio .card-footer .btnDemo:hover, .btnCode:hover{
-  
-}
 
-#portfolio .card-footer a{
-  color: #fff;
-  text-decoration: none;
-}
-#portfolio button:hover a{
-  color: #fff;
-}
 
 #contact {
   width: 100%;
@@ -862,6 +900,7 @@ footer span {
   .inner-contact h6 {
     font-size: 14px;
   }
+  
 }
 @media (max-width: 767px) {
   #contact {
@@ -876,6 +915,9 @@ footer span {
     right: 40px;
     width: 80%;
     height: 85%;
+  }
+  .name h1{
+    font-size: 32px;
   }
 }
 
@@ -914,5 +956,25 @@ footer span {
   }
   .image-model::before{
     bottom: -70px;
+  }
+  #main{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .name{
+    width: 70%;
+  }
+  .name h1 {
+    font-size: 24px;
+  }
+  
+}
+
+@media (max-width: 400px) {
+  .avatar {
+    /* display: none; */
+  }
+  .name{
+    width: 90%;
   }
 }

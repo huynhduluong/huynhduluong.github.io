@@ -534,7 +534,7 @@ a.logo {
 #portfolio .product__item .card-title {
   color:var(--mainColor);
   /* color: #f9f9f9; */
-  font-size: 1.5em;
+  font-size: 1.125em;
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: capitalize;

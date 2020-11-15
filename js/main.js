@@ -45,5 +45,10 @@ $(document).ready(function () {
 
     $("nav ul").toggleClass("active-menu");
   });
+  $("nav ul li").click(function () {
+    $(".toggle").toggleClass("active");
+
+    $("nav ul").toggleClass("active-menu");
+  })
 });
 /*End Responsive Navigation*/

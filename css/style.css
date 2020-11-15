@@ -88,15 +88,14 @@ a.logo {
   left: 15%;
   transform: translate(-15%, -50%);
   background-size: cover;
-  background-position: right center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-image: url("./../img/avatar.jpg");
   width: 350px;
   height: 350px;
   border-radius: 50%;
 }
-.avatar img {
-}
+
 .name {
   font-family: calibri;
   width: 500px;
@@ -534,7 +533,7 @@ a.logo {
 #portfolio .product__item .card-title {
   color:var(--mainColor);
   /* color: #f9f9f9; */
-  font-size: 1.5em;
+  font-size: 1.125em;
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: capitalize;
